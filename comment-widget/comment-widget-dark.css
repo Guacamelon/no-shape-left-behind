@@ -55,12 +55,12 @@
 
 @font-face {
     font-family: "Nexa Light"; 
-    src: url("/fonts/Nexa Light.otf") format("opentype");
+    src: url("fonts/Nexa Light.otf") format("opentype");
 }
 /* Giving the pages their fonts... teehee I love the JSB font <3 */
 @font-face {
     font-family: "Nexa Bold"; 
-    src: url("/fonts/Nexa Bold.otf") format("opentype");
+    src: url("fonts/Nexa Bold.otf") format("opentype");
 }
 
 /* Main */
@@ -70,7 +70,7 @@
     overflow: auto;
     padding: 20px;
     background: #00ffff11;
-    background-image/: url('/comment-widget/sparkle-bg.gif'); /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
+    background-image/: url('comment-widget/sparkle-bg.gif'); /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
     background-attachment: fixed;
     font-family: 'Nexa Light';
     font-size: 16px;

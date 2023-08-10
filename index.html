@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No Shape Left Behind</title>
-    <link href="/BASE_skinsheet.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
   
@@ -30,68 +30,11 @@
 
 <div id=main>
   <span id=desc><p>In the meantime, how about you leave a comment? I used to have an ungly form, but then found this great widget, epic! <i>Don't say anything crass..</i></p></span>
-  
-  <!--
-  <div id= form>
-    <div class="form-line">
-    
-      <label for="name">Your name: </label>
-      <input type="text" id="name" name="name" required minlength="1" maxlength="32" size="10">
-      
-      <fieldset id=pickedshape>
-        <legend>Favorite player shape:</legend>
-        <div>
-          <label>
-            <input type="radio" id="square" name="shape" value="square" /> Square
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="radio" id="triangle" name="shape" value="triangle" /> Triangle
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="radio" id="pentagon" name="shape" value="pentagon" /> Pentagon
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="radio" id="circle" name="shape" value="circle" /> Circle
-          </label>
-        </div>
-    </fieldset>
-      <label for="question">What else you wanna tell me: </label>
-      <textarea rows="4" cols="50" id="question" placeholder="I love Close To Me!"></textarea>
-      <button id="send">Send</button>
-  </div>
-  </div>
-
-</div>
-
-<script>
-document.getElementById('send').onclick = function() {
-var request = new XMLHttpRequest();
-request.open("POST", "https://discord.com/api/webhooks/1106961237364969483/WWqUwhlwzOKmaYm4g9MJXsfToxesXRzpHakpWA8rqYrA8Fsci0_OU7OY-truONi1NsCx");
-    request.setRequestHeader('Content-type', 'application/json');
-var params = {
-    username: "Form "+new Date().getDate(), // you can make this whatever you want
-    content: 'Name: "' + document.getElementById("name").value + '" Shape: "' + document.getElementById("pickedshape").value + '" Answer: "' + document.getElementById("question").value + '"'
-}
-request.send(JSON.stringify(params));
-
-// below gives your user some helpful feedback letting them know their message has been sent
-alert('Thanks! <3');
-// below clears the form fields after submission
-document.getElementById("question").value = '';
-                        }
-</script>
--->
 
 <!-- COMMENT WIDGET -->
 
 <div id="c_widget"></div>
-<script src="/comment-widget/comment-widget.js"></script>
+<script src="comment-widget/comment-widget.js"></script>
 
 </div>
 
