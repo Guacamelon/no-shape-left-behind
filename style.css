@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: "Nexa Light"; 
-    src: url("fonts/Nexa Light.otf") format("opentype");
+    src: url("resources/fonts/Nexa Light.otf") format("opentype");
 }
 /* Giving the pages their fonts... teehee I love the JSB font <3 */
 @font-face {
     font-family: "Nexa Bold"; 
-    src: url("fonts/Nexa Bold.otf") format("opentype");
+    src: url("resources/fonts/Nexa Bold.otf") format("opentype");
 }
 
 body {
@@ -22,7 +22,7 @@ h1, h3 {
 }
 
 #bgholder { /* Background image on pages */
-  background: url("img/BG_jsb.png") fixed;
+  background: url("resources/img/BG_jsb.png") fixed;
   background-size: cover;
   position:fixed;
   top:-10px;
@@ -42,7 +42,7 @@ h1, h3 {
     -moz-filter:blur(8px);
     -ms-filter:blur(8px);
     filter:blur(8px);
-    background: url("img/BG_zoneL.gif") fixed;
+    background: url("resources/img/BG_zoneL.gif") fixed;
     background-size: cover;
     -webkit-transform:scale(1.05);
     -moz-transform:scale(1.05);
@@ -123,7 +123,7 @@ h1, h3 {
 }
 
 #line-div { /* cute image divider */
-  content: url("img/DIV_rainbstrip.png");
+  content: url("resources/img/DIV_rainbstrip.png");
   position: relative;
   width: 99vw;
 }
