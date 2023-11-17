@@ -31,7 +31,7 @@ h1, h3 {
   right:-10px;
 }
 
-#bgholder:after { /* Blur effect on the page background image. Good for flashy gifs */
+#/bgholder:after { /* Blur effect on the page background image. Good for flashy gifs */
     content:'';
     position:fixed;
     top:-15px;
