@@ -1,36 +1,47 @@
+:root {
+  --text-color: ;
+
+  /*Common*/
+  --white: #f5f5f5;
+  --frost: ;
+  --tan: 238, 224, 207;
+  --void: #001112;
+  --cyan: 0, 255, 255; /*rgb for alpha*/
+  
+}
+/* Giving the pages their fonsts... teehee I love the JSB font <3 */
+@font-face {
+  font-family: "Nexa Light"; 
+  src: url("resources/fonts/Nexa Light.otf") format("opentype");}
+@font-face {
+  font-family: "Nexa Bold"; 
+  src: url("resources/fonts/Nexa Bold.otf") format("opentype");}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;}
+html {
+  scroll-behavior: smooth;}
+
 /* --- MAIN STYLING --- */
 
-@font-face {
-    font-family: "Nexa Light"; 
-    src: url("resources/fonts/Nexa Light.otf") format("opentype");
-}
-/* Giving the pages their fonts... teehee I love the JSB font <3 */
-@font-face {
-    font-family: "Nexa Bold"; 
-    src: url("resources/fonts/Nexa Bold.otf") format("opentype");
-}
-
 body {
-	background: #001112;
-	color: #f7f5f5;
-	font-family: Nexa Light;
+	background-color: var(--void);
+	color: var(--white);
+	font-family: 'Nexa Light', sans-serif;
 	font-size: 15px;
-}
-
-h1, h3 {
-	text-transform: uppercase;
 }
 
 #bgholder { /* Background image on pages */
   background: url("resources/img/BG_jsb.png") fixed;
   background-size: cover;
   position:fixed;
-  top:-10px;
+  top: 40px;
   left:-10px;
   bottom:-10px;
   right:-10px;
 }
-
 #/bgholder:after { /* Blur effect on the page background image. Good for flashy gifs */
     content:'';
     position:fixed;
@@ -50,52 +61,96 @@ h1, h3 {
     transform:scale(1.05);
 }
 
- #header { /* Sticky at the top of the page */
-  position: -webkit-sticky;
+h1, h3 {
+	text-transform: uppercase;
+}
+
+a {
+
+}
+
+i {
+  color: var(--tan);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  align-items: center;
+  padding: 0 20px;
+  font-family: 'Nexa Bold', sans-serif;
+	font-size: 16px;
+  text-transform: uppercase;
+  color: var(--tan);
+  background-color: #0e9aa1;
+}
+nav a {
+  text-decoration: none;
+  color: var(--tan);
+}
+nav .left {
+
+}
+
+header {
+  position: relative;
+  margin: 20px 0;
+}
+
+header #ttl-bar { /* Shaped background-block of the header title */
+  width: 580px;
+	height: 80px;
+	transform: skew(-25deg);
+	margin-left: -25px;
+	background-color: rgba(var(--cyan), 0.3);
+}
+header .title { /* Text portion of the page header title: "No Shape Left Behind" */
+  position: absolute;
+  top: 50%;
+  transform: translate(-5%, -50%);
+  margin-left: 100px;
+  text-transform: uppercase;
+  font-family: 'Nexa Bold';
+  font-size: 17.5px;
   
 }
 
-.title { /* Text portion of the page header title: "No Shape Left Behind" */
-  text-transform: uppercase;
-  font-family: Nexa Bold;
-  font-size: 17.5px;
-  transform: skew(20deg);
-  margin-left: 100px;
-}
-
-#ttl { /* Shaped background-block of the header title */
-  display: inline-block;
-  vertical-align: middle;
-  width: 580px;
-	height: 80px;
-	transform: skew(-20deg);
-	margin-left: -25px;
-	background: #00ffff55;
-}
-
-.details { /* Text portion of the page header details: "A, B, C..." */
-  color: #00ffff;
-  transform: skew(20deg);
-  padding-left: 10px;
-}
-
-#dtls { /* Shaped background-block of the header details */
-  vertical-align: middle;
-  display: inline-block;
+header #dtls-bar { /* Shaped background-block of the header details */
+  position: absolute;
+  top: 10%;
   width: 400px;
 	height: 65px;
-	transform: skew(-20deg);
-	background: #00ffff22;
+  margin-left: 555px;
+	transform: skew(-25deg);
+	background-color: rgba(var(--cyan), 0.1);
+}
+header .details { /* Text portion of the page header details: "A, B, C..." */
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 400px;
+  margin-left: 580px;
+  color: rgba(var(--cyan), 0.7);
+}
+
+header .details::first-line { 
+  padding-left: 10px;
 }
 
 #desc { /* Description text below the header stuff. Doesn't stick. */
   position: relative;
-  margin: 0px 50px 0px 50px;
+  padding: 10px 30px;
+  background-color: rgba(var(--cyan), 0.06);
 }
 
 #main { /* Description text below the header stuff. Doesn't stick. */
   position: relative;
-  margin: 0px 50px 0px 50px;
+  margin: 50px 30px;
+}
+
+#content {
+
 }
 
 /* - Important Catagory - */
@@ -110,7 +165,7 @@ h1, h3 {
 #imp-title { /* Description text below the header stuff. Doesn't stick. */
   position: relative;
   text-align:center;
-  color: #00ffff;
+  color: var(--cyan);
   font-size: 30px;
   text-transform: uppercase;
   
@@ -125,108 +180,39 @@ h1, h3 {
 #line-div { /* cute image divider */
   content: url("resources/img/DIV_rainbstrip.png");
   position: relative;
-  width: 99vw;
+  height: 1px;
+  width: 100%;
+  margin: 5px 0;
+}
+
+#line-div:last-child { /* cute image divider */
+  transform: scaleX(-100%);
 }
 /* --- */
 
 /* STYLING FOR /shapes */
- /* The Modal (background) */
- .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-   /* Modal Header */
-  .modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-  }
-  
-  /* Modal Body */
-  .modal-body {padding: 2px 16px;}
-  
-  /* Modal Footer */
-  .modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    animation-name: animatepopup;
-    animation-duration: 0.4s
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  } 
-  
-  /* Add Animation */
-  @keyframes animatepopup {
-    0%  {bottom: -999px;
-        background-color: #06474A;
-        margin-left: 15px;
-        color: #ffffff;
-      }
-  100% {bottom: 0px;
-        background-color: #06474AC7;
-        margin-left: 0px;
-        color: #15cbd4;
-      }
-  } 
-/* --- */
+
 
 /* --- STYLING FOR /playlist --- */
 #trkheader {
 	position: relative; 
-	color: #00ffff;
-	background: #000000;
+	color: var(--cyan);
+	background: black;
 	height: 50px;
 	width: 100%;
 	padding: 5px;
 	border-bottom: 2.5px solid;
-	border-color: #00ffff;
+	border-color: var(--cyan);
 	margin-bottom: 5px;
 	font-size: 20px;
 }
 
 #trklist {
 	position: relative; 
-	color: #00ffff;
+	color: var(--cyan);
 	border-left: 2.5px solid;
 	border-right: 2.5px solid;
-	border-color: #00ffff;
+	border-color: var(--cyan);
 	top: 0;
 	width: 100%;
 	height: auto;
@@ -246,23 +232,17 @@ h1, h3 {
 }
 
 .track:hover {
-	background: #06474AC7;
+	background: #06474AA7;
 	color: #15cbd4;
 	animation: ease-out;
 	animation-name: cardhover;
 	animation-duration: 0.15s;
 }
 @keyframes cardhover {
-0%   {background-color: #06474A;
-      margin-left: 15px;
-      color: #ffffff;
+0%    {margin-left: -10px;
+      color: white;
 	}
-100% {background-color: #06474AC7;
-      margin-left: 0px;
+100% {margin-left: 0px;
       color: #15cbd4;
 	}
-}
-
-.details {
-	display:none;
 }
